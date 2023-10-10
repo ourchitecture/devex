@@ -3,6 +3,7 @@ status: accepted
 date: 2023-10-10
 deciders: Eric Swanson
 ---
+
 # Choose licensing model
 
 ## Context and Problem Statement
@@ -17,12 +18,12 @@ it, customize it, extend it, and contribute to it as they wish.
 
 ## Considered Options
 
-- [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)
-- BSD3
-- MIT
-- Dual license with MIT and CC0
-- No license
-- Other open source licenses
+-   [CC0](https://creativecommons.org/share-your-work/public-domain/cc0/)
+-   BSD3
+-   MIT
+-   Dual license with MIT and CC0
+-   No license
+-   Other open source licenses
 
 ## Decision Outcome
 
@@ -33,24 +34,24 @@ MIT fits better on their work.
 
 ## CC0
 
-- Good, because this license donates the content to "public domain" and
-  does so as legally as possible.
-- Bad, because it does not contain attribution - and
-  [attribution is important](https://opensource.stackexchange.com/a/9126/5671).
+-   Good, because this license donates the content to "public domain" and
+    does so as legally as possible.
+-   Bad, because it does not contain attribution - and
+    [attribution is important](https://opensource.stackexchange.com/a/9126/5671).
 
 ## BSD3
 
-- Bad, because it [is unclear whether it can be used for documentation](https://opensource.stackexchange.com/a/9545/5671)
+-   Bad, because it [is unclear whether it can be used for documentation](https://opensource.stackexchange.com/a/9545/5671)
 
 ## MIT
 
-- Good, because it [explicitly may be used for documentation](https://opensource.stackexchange.com/a/9545/5671)
-- Good, because it is lean.
+-   Good, because it [explicitly may be used for documentation](https://opensource.stackexchange.com/a/9545/5671)
+-   Good, because it is lean.
 
 ## Dual license with MIT and CC0
 
 With the SPDX identifier `MIT OR CC0-1.0`, the receiver of the documents can
 decide which license they want to use.
 
-- Good, because offers freedom at the receiver
-- Bad, because dual licensing is not widely known
+-   Good, because offers freedom at the receiver
+-   Bad, because dual licensing is not widely known

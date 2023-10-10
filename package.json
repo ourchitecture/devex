@@ -1,0 +1,45 @@
+{
+    "name": "@ourchitecture/devex",
+    "version": "0.0.1",
+    "description": "",
+    "keywords": [],
+    "author": "Ourchitecture",
+    "license": "MIT OR CC0-1.0",
+    "type": "module",
+    "scripts": {
+        "test": "wireit",
+        "test:formatting": "wireit",
+        "format": "prettier --write --config ./.prettierrc.yaml --ignore-path ./.gitignore --ignore-path ./.prettierignore ./",
+        "test:formatting:changes": "lint-staged",
+        "prepare": "husky install"
+    },
+    "wireit": {
+        "test": {
+            "dependencies": [
+                "test:formatting"
+            ]
+        },
+        "test:formatting": {
+            "command": "node ./src/tasks/node/check/formatting.js",
+            "files": [
+                "**/*",
+                "!.husky",
+                "!.task-output",
+                "!pnpm-lock.yaml"
+            ],
+            "output": [
+                "./.task-output/src/tasks/node/check/formatting.js/*"
+            ]
+        }
+    },
+    "devDependencies": {
+        "dotenv": "^16.3.1",
+        "glob": "^10.3.5",
+        "husky": "^8.0.3",
+        "lint-staged": "^14.0.0",
+        "markdownlint-cli2": "^0.10.0",
+        "prettier": "^3.0.2",
+        "winston": "^3.10.0",
+        "wireit": "^0.10.0"
+    }
+}

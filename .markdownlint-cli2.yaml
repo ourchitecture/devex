@@ -1,0 +1,12 @@
+globs:
+    - '**/*.md'
+ignores:
+    - '**/node_modules'
+    - '**/playwright-report'
+
+config:
+    MD030:
+        ul_multi: 3
+        ul_single: 3
+    MD007:
+        indent: 4

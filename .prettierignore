@@ -1,0 +1,4 @@
+# extends ".gitignore"
+
+**/.husky/
+**/pnpm-lock.yaml

@@ -1,0 +1,75 @@
+# This workflow will do a clean installation of node dependencies, cache/
+# restore them, build the source code and run tests across different
+# versions of node.
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+name: repo-tests
+
+on:
+    push:
+        branches: ['main']
+    pull_request:
+        branches: ['main']
+
+env:
+    CI: true
+    # DEBUG: true
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v3
+
+            - name: Get node version
+              id: node-version
+              shell: bash
+              run: echo "NODE_VERSION=$(cat ./.nvmrc)" >> $GITHUB_OUTPUT
+
+            - name: Get pnpm version
+              id: pnpm-version
+              shell: bash
+              run: echo "PNPM_VERSION=$(cat ./.pnpmrc)" >> $GITHUB_OUTPUT
+
+            - uses: actions/setup-node@v3
+              id: node-install
+              with:
+                  node-version: ${{ steps.node-version.outputs.NODE_VERSION }}
+
+            - uses: pnpm/action-setup@v2
+              id: pnpm-install
+              with:
+                  version: ${{ steps.pnpm-version.outputs.PNPM_VERSION }}
+                  run_install: false
+
+            - name: Get pnpm store directory path
+              id: pnpm-store-path
+              shell: bash
+              run: echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+
+            - name: Setup pnpm cache
+              uses: actions/cache@v3
+              with:
+                  path: ${{ steps.pnpm-store-path.outputs.STORE_PATH }}
+                  key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+                  restore-keys: ${{ runner.os }}-pnpm-store-
+
+            - name: Setup Wireit cache
+              id: cache-wireit
+              uses: google/wireit@setup-github-actions-caching/v1
+
+            - name: Install NodeJS dependencies
+              id: install-dependencies
+              run: pnpm install --recursive --frozen-lockfile
+
+            - name: Run tests
+              run: pnpm test
+
+            - name: upload-task-output
+              if: always()
+              uses: actions/upload-artifact@v3
+              with:
+                  name: task-output
+                  path: |
+                      **/.task-output/
+                  if-no-files-found: error
