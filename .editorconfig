@@ -1,0 +1,23 @@
+root = true
+
+[*]
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+# indentation: specific file types may need specific settings
+indent_style = space
+indent_size = 2
+# line length: may feel like a personal preference,
+# but most code style books across multiple languages
+# suggest concise columns for readability. In fact,
+# courses on speed reading back up this requirement.
+# https://www.codereadability.com/maximum-line-length/
+max_line_length = 80
+quote_type = double
+end_of_line = lf
+
+[*.md]
+max_line_length = off
+# markdown files may be formatted with specific whitespace
+trim_trailing_whitespace = false
+tab_width = 4
