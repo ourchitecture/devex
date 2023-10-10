@@ -40,3 +40,4 @@ Recommend the VS Code extensions "esbenp.prettier-vscode" and
 ## More Information
 
 -   [Prettier website](https://prettier.io/)
+-   ["markdownlint-cli2" code repository](https://github.com/DavidAnson/markdownlint-cli2)
