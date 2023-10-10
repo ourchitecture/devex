@@ -1,5 +1,7 @@
 # Open source development experience (DevEx)
 
+[![GitHub Actions: repo-tests](https://img.shields.io/github/actions/workflow/status/ourchitecture/devex/repo-tests.yaml?logo=GitHub%20Actions&logoColor=white&label=repo-tests)](https://github.com/ourchitecture/devex/actions/workflows/repo-tests.yaml)
+
 Welcome to Our solution to Development Experience or DevEx. Astute readers
 might notice we use the term ["Development Experience" rather than "Developer Experience"](./src/docs/decisions/refer-to-devex-as-development-experience.md).
 
