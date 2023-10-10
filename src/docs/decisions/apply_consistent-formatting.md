@@ -29,8 +29,8 @@ Check general formatting with prettier; familiar with it and good enough.
 Check Markdown formatting with "markdownlint", using the "markdownlint-cli2"
 tool.
 
-Recommend the VS Code extension "davidanson.vscode-markdownlint" to improve
-the developer experience.
+Recommend the VS Code extensions "esbenp.prettier-vscode" and
+"davidanson.vscode-markdownlint" to improve the developer experience.
 
 ### Consequences
 
