@@ -24,6 +24,10 @@ for improved automation.
 Check commit messages against the "Conventional Commits" specification;
 familiar with it and good enough.
 
+Use the "@commitlint/cli" tool to check commit messages.
+
+Use Husky and git hooks to enforce automation checks.
+
 ### Consequences
 
 -   Good, because it ensures a basic level of meaning to commits
@@ -34,3 +38,6 @@ familiar with it and good enough.
 ## More Information
 
 -   [Conventional commits website](https://www.conventionalcommits.org/)
+-   [githooks website](https://git-scm.com/docs/githooks)
+-   [Husky website](https://typicode.github.io/husky/)
+-   ["commitlint" website](https://commitlint.js.org/)
