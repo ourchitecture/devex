@@ -15,26 +15,26 @@ devDependencies:
     specifier: ^16.3.1
     version: 16.3.1
   glob:
-    specifier: ^10.3.5
+    specifier: ^10.3.10
     version: 10.3.10
   husky:
     specifier: ^8.0.3
     version: 8.0.3
   lint-staged:
-    specifier: ^14.0.0
+    specifier: ^14.0.1
     version: 14.0.1
   markdownlint-cli2:
     specifier: ^0.10.0
     version: 0.10.0
   prettier:
-    specifier: ^3.0.2
+    specifier: ^3.0.3
     version: 3.0.3
   winston:
-    specifier: ^3.10.0
+    specifier: ^3.11.0
     version: 3.11.0
   wireit:
-    specifier: ^0.10.0
-    version: 0.10.0
+    specifier: ^0.14.0
+    version: 0.14.0
 
 packages:
 
@@ -2044,8 +2044,8 @@ packages:
       winston-transport: 4.5.0
     dev: true
 
-  /wireit@0.10.0:
-    resolution: {integrity: sha512-4TX6V9D/2iXUBzdqQaUG+cRePle0mDx1Q7x4Ka2cA8lgp1+ZBhrOTiLsXYRl2roQEldEFgQ2Ff1W8YgyNWAa6w==}
+  /wireit@0.14.0:
+    resolution: {integrity: sha512-CwHhyWduARI7zOoyyQvxH6U/5GTy8p6RxTe2LpwIhE4Y8PbaTk0iH8dLkeGMvxETVBkxCgQnF2GfzYKXMSmYSw==}
     engines: {node: '>=14.14.0'}
     hasBin: true
     dependencies:
