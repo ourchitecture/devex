@@ -22,13 +22,13 @@
         "test:formatting": {
             "command": "node ./src/tasks/node/check/formatting.js",
             "files": [
-                "**/*",
+                "./**/*",
                 "!.husky",
                 "!.task-output",
                 "!pnpm-lock.yaml"
             ],
             "output": [
-                "./.task-output/src/tasks/node/check/formatting.js/*"
+                "./.task-output/src/tasks/node/check/formatting.js/**"
             ]
         }
     },
