@@ -23,6 +23,10 @@ test: check
 format: init
 	@pnpm format
 
+.PHONY: dev
+dev: init
+	@pnpm test -- --watch
+
 # This command assumes that a `sync` will result in two pushes:
 # 1) pushing the code
 # 2) pushing the tags
