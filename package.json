@@ -43,5 +43,9 @@
         "prettier": "^3.0.3",
         "winston": "^3.11.0",
         "wireit": "^0.14.0"
+    },
+    "resolutions": {
+        "@types/react": "^17",
+        "@types/react-dom": "^17"
     }
 }

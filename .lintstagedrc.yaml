@@ -1,1 +1,3 @@
-'*': 'pnpm test:formatting'
+'*': 'pnpm prettier --check --log-level debug --config ./.prettierrc.yaml --ignore-path ./.gitignore --ignore-path ./.prettierignore'
+
+'*.md': 'pnpm markdownlint-cli2 --config ./.markdownlint-cli2.yaml'
