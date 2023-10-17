@@ -27,6 +27,21 @@ format: init
 dev: init
 	@pnpm test -- --watch
 
+.PHONY: clean
+clean:
+	@rm --recursive --force \
+    ./.task-output/ \
+    ./.wireit/ \
+    ./src/backstage/ourstage/dist-types/
+
+.PHONY: reset
+reset: clean
+	@rm --recursive --force \
+    ./node_modules/ \
+    ./src/backstage/ourstage/node_modules/ \
+    ./src/backstage/ourstage/packages/app/node_modules/ \
+    ./src/backstage/ourstage/packages/backend/node_modules/
+
 # This command assumes that a `sync` will result in two pushes:
 # 1) pushing the code
 # 2) pushing the tags

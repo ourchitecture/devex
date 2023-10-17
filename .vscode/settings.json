@@ -15,5 +15,9 @@
     },
     "[ignore][shellscript]": {
         "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "typescript.tsdk": "./src/backstage/ourstage/node_modules/typescript/lib",
+    "[properties]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
     }
 }
