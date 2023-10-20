@@ -10,6 +10,7 @@ all: check
 .PHONY: init
 init:
 	@pnpm install --recursive --frozen-lockfile
+	@cd ./src/backstage/ourstage/ && yarn install
 
 # "check" is a standard make target
 .PHONY: check
@@ -32,7 +33,8 @@ clean:
 	@rm --recursive --force \
     ./.task-output/ \
     ./.wireit/ \
-    ./src/backstage/ourstage/dist-types/
+    ./src/backstage/ourstage/dist-types/ \
+    ./src/backstage/ourstage/packages/backend/dist/
 
 .PHONY: reset
 reset: clean

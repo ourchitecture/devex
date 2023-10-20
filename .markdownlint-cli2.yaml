@@ -3,6 +3,7 @@ globs:
 ignores:
     - '**/node_modules'
     - '**/playwright-report'
+    - './src/backstage/**'
 
 config:
     MD030:

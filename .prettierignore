@@ -2,3 +2,5 @@
 
 **/.husky/
 **/pnpm-lock.yaml
+
+./src/backstage/**

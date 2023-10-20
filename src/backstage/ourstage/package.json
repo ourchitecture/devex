@@ -6,12 +6,12 @@
     "node": "18"
   },
   "scripts": {
-    "dev": "concurrently \"yarn start\" \"yarn start-backend\"",
-    "start": "yarn workspace app start",
-    "start-backend": "yarn workspace backend start",
-    "build:backend": "yarn workspace backend build",
+    "dev": "concurrently \"yarn start-backend\" \"yarn start\"",
+    "start": "yarn workspace @ourchitecture/ourstage-app start",
+    "start-backend": "yarn workspace @ourchitecture/ourstage-backend start",
+    "build:backend": "yarn workspace @ourchitecture/ourstage-backend build",
     "build:all": "backstage-cli repo build --all",
-    "build-image": "yarn workspace backend build-image",
+    "build-image": "yarn workspace @ourchitecture/ourstage-backend build-image",
     "tsc": "tsc",
     "tsc:full": "tsc --skipLibCheck false --incremental false",
     "clean": "backstage-cli repo clean",
@@ -30,7 +30,7 @@
     ]
   },
   "devDependencies": {
-    "@backstage/cli": "^0.22.13",
+    "@backstage/cli": "^0.23.0",
     "@spotify/prettier-config": "^12.0.0",
     "concurrently": "^8.0.0",
     "lerna": "^4.0.0",
