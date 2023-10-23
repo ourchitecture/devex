@@ -3,6 +3,7 @@
 **/.husky/
 **/pnpm-lock.yaml
 
+backstage
 dist
 dist-types
 coverage
