@@ -6,6 +6,11 @@
     "author": "Ourchitecture",
     "license": "MIT OR CC0-1.0",
     "type": "module",
+    "engines": {
+        "node": ">=18.18.2",
+        "pnpm": ">=8.9.2"
+    },
+    "engineStrict": true,
     "scripts": {
         "test": "wireit",
         "test:formatting": "wireit",
