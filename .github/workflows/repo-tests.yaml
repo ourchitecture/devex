@@ -25,18 +25,18 @@ jobs:
               shell: bash
               run: echo "PNPM_VERSION=$(cat ./.pnpmrc)" >> $GITHUB_OUTPUT
 
+            - uses: pnpm/action-setup@v2
+              id: pnpm-install
+              with:
+                  version: ${{ steps.pnpm-version.outputs.PNPM_VERSION }}
+                  run_install: false
+
             - uses: actions/setup-node@v3
               id: node-install
               with:
                   node-version-file: './.nvmrc'
                   cache: 'pnpm'
                   cache-dependency-path: '**/pnpm-lock.yaml'
-
-            - uses: pnpm/action-setup@v2
-              id: pnpm-install
-              with:
-                  version: ${{ steps.pnpm-version.outputs.PNPM_VERSION }}
-                  run_install: false
 
             - name: Setup Wireit cache
               id: cache-wireit
