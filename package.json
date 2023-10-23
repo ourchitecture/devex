@@ -11,6 +11,7 @@
         "pnpm": ">=8.9.2"
     },
     "engineStrict": true,
+    "packageManager": "pnpm@8.9.2",
     "scripts": {
         "test": "wireit",
         "test:formatting": "wireit",
@@ -51,6 +52,7 @@
     },
     "resolutions": {
         "@types/react": "^17",
-        "@types/react-dom": "^17"
+        "@types/react-dom": "^17",
+        "prettier": "^3"
     }
 }

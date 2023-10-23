@@ -6,6 +6,7 @@
     "node": ">=18.18.2",
     "yarn": ">=1.22.19"
   },
+  "packageManager": "yarn@1.22.19",
   "scripts": {
     "dev": "concurrently \"yarn start-backend\" \"yarn start\"",
     "start": "yarn workspace @ourchitecture/ourstage-app start",
