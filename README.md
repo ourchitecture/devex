@@ -3,7 +3,7 @@
 [![GitHub Actions: repo-tests](https://img.shields.io/github/actions/workflow/status/ourchitecture/devex/repo-tests.yaml?logo=GitHub%20Actions&logoColor=white&label=repo-tests)](https://github.com/ourchitecture/devex/actions/workflows/repo-tests.yaml)
 
 Welcome to Our solution to Development Experience or DevEx. Astute readers
-might notice we use the term ["Development Experience" rather than "Developer Experience"](./src/docs/decisions/refer-to_devex-as-development-experience.md).
+might notice we use the term ["Development Experience" rather than "Developer Experience"](./src/docs/decisions/gitrefer-to_devex-as-development-experience.md).
 
 ## Project structure
 
@@ -19,6 +19,6 @@ might notice we use the term ["Development Experience" rather than "Developer Ex
 
 This work is dual-licensed under MIT and CC0-1.0.
 You can choose between one of them if you use this work.
-Read more about [this decision](./src/docs/decisions/choose-licensing-model.md).
+Read more about [this decision](./src/docs/decisions/choose_licensing-model.md).
 
 `SPDX-License-Identifier: MIT OR CC0-1.0`

@@ -6,4 +6,4 @@ Although certain decisions matter more to some than to others, communicating
 collaboration.
 
 All of the "important" decisions for this project are organized under this
-directory starting with the decision to ["record important decisions"](./record-important-decisions.md).
+directory starting with the decision to ["record important decisions"](./record_important-decisions.md).
