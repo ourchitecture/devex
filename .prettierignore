@@ -3,4 +3,6 @@
 **/.husky/
 **/pnpm-lock.yaml
 
-./src/backstage/**
+dist
+dist-types
+coverage

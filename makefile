@@ -5,7 +5,7 @@
 .DEFAULT_GOAL:=all
 
 # "all" is a standard make target
-all: check
+all: init check install
 
 .PHONY: init
 init:
@@ -14,20 +14,25 @@ init:
 
 # "check" is a standard make target
 .PHONY: check
-check: init
+check:
 	@pnpm test
 	@cd ./src/backstage/ourstage/ && "$(MAKE)" $@
 
 .PHONY: test
 test: check
 
+# "install" is a standard make target
+.PHONY: install
+install:
+	@cd ./src/backstage/ourstage/ && "$(MAKE)" $@
+
 .PHONY: format
-format: init
+format:
 	@pnpm format
 	@cd ./src/backstage/ourstage/ && "$(MAKE)" $@
 
 .PHONY: dev
-dev: init
+dev:
 	@pnpm test -- --watch
 
 .PHONY: clean
