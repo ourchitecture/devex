@@ -38,4 +38,5 @@ jobs:
 
             - name: Make
               id: make
+              working-directory: ./src/backstage/ourstage/
               run: make
