@@ -3,39 +3,39 @@
 apiVersion: backstage.io/v1alpha1
 kind: System
 metadata:
-  name: examples
+    name: examples
 spec:
-  owner: guests
+    owner: guests
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-component
 apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
-  name: example-website
+    name: example-website
 spec:
-  type: website
-  lifecycle: experimental
-  owner: guests
-  system: examples
-  providesApis: [example-grpc-api]
+    type: website
+    lifecycle: experimental
+    owner: guests
+    system: examples
+    providesApis: [example-grpc-api]
 ---
 # https://backstage.io/docs/features/software-catalog/descriptor-format#kind-api
 apiVersion: backstage.io/v1alpha1
 kind: API
 metadata:
-  name: example-grpc-api
+    name: example-grpc-api
 spec:
-  type: grpc
-  lifecycle: experimental
-  owner: guests
-  system: examples
-  definition: |
-    syntax = "proto3";
+    type: grpc
+    lifecycle: experimental
+    owner: guests
+    system: examples
+    definition: |
+        syntax = "proto3";
 
-    service Exampler {
-      rpc Example (ExampleMessage) returns (ExampleMessage) {};
-    }
+        service Exampler {
+          rpc Example (ExampleMessage) returns (ExampleMessage) {};
+        }
 
-    message ExampleMessage {
-      string example = 1;
-    };
+        message ExampleMessage {
+          string example = 1;
+        };
