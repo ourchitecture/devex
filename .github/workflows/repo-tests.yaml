@@ -9,6 +9,9 @@ on:
     pull_request:
         branches: ['main']
 
+    # Enable manual triggers.
+    workflow_dispatch:
+
 env:
     CI: true
     # DEBUG: true

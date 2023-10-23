@@ -15,6 +15,9 @@ on:
             - '.github/workflows/ourstage-tests.yaml'
             - 'src/backstage/ourstage/**'
 
+    # Enable manual triggers.
+    workflow_dispatch:
+
 env:
     CI: true
     # DEBUG: true
