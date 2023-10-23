@@ -1,0 +1,38 @@
+# This workflow will do a clean installation of node dependencies, cache/
+# restore them, build the "ourstage" project and run tests.
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-nodejs
+name: ourstage-tests
+
+on:
+    push:
+        branches: ['main']
+        paths:
+            - '.github/workflows/ourstage-tests.yml'
+            - 'src/backstage/ourstage/**'
+    pull_request:
+        branches: ['main']
+        paths:
+            - '.github/workflows/ourstage-tests.yml'
+            - 'src/backstage/ourstage/**'
+
+env:
+    CI: true
+    # DEBUG: true
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - uses: actions/checkout@v3
+
+            - uses: actions/setup-node@v3
+              id: node-install
+              with:
+                  node-version-file: './.nvmrc'
+                  cache: 'yarn'
+                  cache-dependency-path: './src/backstage/ourstage/**/yarn.lock'
+
+            - name: Make
+              id: make
+              run: make
