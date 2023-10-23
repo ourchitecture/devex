@@ -9,6 +9,9 @@
   "exclude": ["node_modules"],
   "compilerOptions": {
     "outDir": "dist-types",
-    "rootDir": "."
+    "rootDir": ".",
+    "paths": {
+      "react": ["./node_modules/@types/react"]
+    }
   }
 }

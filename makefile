@@ -10,12 +10,13 @@ all: check
 .PHONY: init
 init:
 	@pnpm install --recursive --frozen-lockfile
-	@cd ./src/backstage/ourstage/ && yarn install
+	@cd ./src/backstage/ourstage/ && "$(MAKE)" $@
 
 # "check" is a standard make target
 .PHONY: check
 check: init
 	@pnpm test
+	@cd ./src/backstage/ourstage/ && "$(MAKE)" $@
 
 .PHONY: test
 test: check
@@ -23,6 +24,7 @@ test: check
 .PHONY: format
 format: init
 	@pnpm format
+	@cd ./src/backstage/ourstage/ && "$(MAKE)" $@
 
 .PHONY: dev
 dev: init
@@ -32,17 +34,14 @@ dev: init
 clean:
 	@rm --recursive --force \
     ./.task-output/ \
-    ./.wireit/ \
-    ./src/backstage/ourstage/dist-types/ \
-    ./src/backstage/ourstage/packages/backend/dist/
+    ./.wireit/
+	@cd ./src/backstage/ourstage/ && "$(MAKE)" $@
 
 .PHONY: reset
 reset: clean
 	@rm --recursive --force \
-    ./node_modules/ \
-    ./src/backstage/ourstage/node_modules/ \
-    ./src/backstage/ourstage/packages/app/node_modules/ \
-    ./src/backstage/ourstage/packages/backend/node_modules/
+	./node_modules/
+	@cd ./src/backstage/ourstage/ && "$(MAKE)" $@
 
 # This command assumes that a `sync` will result in two pushes:
 # 1) pushing the code
