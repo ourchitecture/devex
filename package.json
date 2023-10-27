@@ -7,25 +7,28 @@
     "license": "MIT OR CC0-1.0",
     "type": "module",
     "engines": {
-        "node": ">=18.18.2",
-        "pnpm": ">=8.9.2"
+        "node": ">=20.9.0",
+        "npm": ">=10.2.1",
+        "pnpm": ">=8.10.0"
     },
     "engineStrict": true,
-    "packageManager": "pnpm@8.9.2",
+    "packageManager": "pnpm@8.10.0",
     "scripts": {
-        "test": "wireit",
-        "test:formatting": "wireit",
+        "check": "wireit",
+        "check:formatting": "wireit",
+        "check:formatting:changes": "lint-staged",
+        "check:versions": "wireit",
         "format": "prettier --write --config ./.prettierrc.yaml --ignore-path ./.gitignore --ignore-path ./.prettierignore ./",
-        "test:formatting:changes": "lint-staged",
         "prepare": "husky install"
     },
     "wireit": {
-        "test": {
+        "check": {
             "dependencies": [
-                "test:formatting"
+                "check:formatting",
+                "check:versions"
             ]
         },
-        "test:formatting": {
+        "check:formatting": {
             "command": "node ./src/tasks/node/check/formatting.js",
             "files": [
                 "./**/*",
@@ -35,6 +38,22 @@
             ],
             "output": [
                 "./.task-output/src/tasks/node/check/formatting.js/**"
+            ]
+        },
+        "check:versions": {
+            "command": "node ./src/tasks/node/check/versions.js",
+            "files": [
+                "./**/package.json",
+                "./**/.npmrc",
+                "./**/.nvmrc",
+                "./**/.pnpmrc",
+                "./src/tasks/node/check/versions.js",
+                "!.husky",
+                "!.task-output",
+                "!pnpm-lock.yaml"
+            ],
+            "output": [
+                "./.task-output/src/tasks/node/check/versions.js/**"
             ]
         }
     },
@@ -47,6 +66,7 @@
         "lint-staged": "^14.0.1",
         "markdownlint-cli2": "^0.10.0",
         "prettier": "^3.0.3",
+        "which": "^4.0.0",
         "winston": "^3.11.0",
         "wireit": "^0.14.0"
     },

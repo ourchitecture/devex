@@ -97,6 +97,8 @@ const checkFormattingWithMarkdownlint = async (scriptFilePath) => {
 }
 
 const main = async (scriptFilePath) => {
+    await host.loadDotenv()
+
     log.registerLoggerSingleton(scriptFilePath)
 
     log.info('Checking formatting...')

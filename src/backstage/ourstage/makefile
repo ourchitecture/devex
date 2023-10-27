@@ -7,9 +7,16 @@
 # "all" is a standard make target
 all: init check install
 
+# BUG: Node engines issue https://github.com/backstage/backstage/issues/20881
 .PHONY: init
 init:
-	@yarn install --frozen-lockfile
+	@yarn install \
+		--frozen-lockfile \
+		--ignore-engines
+
+.PHONY: info
+info:
+	@yarn backstage-cli info
 
 .PHONY: lint
 lint:
@@ -41,12 +48,12 @@ dev: init
 clean:
 	@yarn clean
 	@rm --recursive --force \
-    ./dist-types/ \
-    ./backend/dist/
+		./dist-types/ \
+		./backend/dist/
 
 .PHONY: reset
 reset: clean
 	@rm --recursive --force \
-    ./node_modules/ \
-    ./packages/app/node_modules/ \
-    ./packages/backend/node_modules/
+		./node_modules/ \
+		./packages/app/node_modules/ \
+		./packages/backend/node_modules/

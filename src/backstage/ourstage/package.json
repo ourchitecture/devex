@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "private": true,
   "engines": {
-    "node": ">=18.18.2",
+    "node": ">=20.9.0",
+    "npm": ">=10.2.1",
     "yarn": ">=1.22.19"
   },
-  "packageManager": "yarn@1.22.19",
+  "engineStrict": true,
+  "packageManager": "pnpm@8.10.0",
   "scripts": {
     "dev": "concurrently \"yarn start-backend\" \"yarn start\"",
     "start": "yarn workspace @ourchitecture/ourstage-app start",
@@ -32,7 +34,7 @@
     ]
   },
   "devDependencies": {
-    "@backstage/cli": "^0.23.0",
+    "@backstage/cli": "^0.23.1",
     "@spotify/prettier-config": "^12.0.0",
     "concurrently": "^8.0.0",
     "lerna": "^4.0.0",

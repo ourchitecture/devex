@@ -19,5 +19,8 @@
     "typescript.tsdk": "./src/backstage/ourstage/node_modules/typescript/lib",
     "[properties]": {
         "editor.defaultFormatter": "foxundermoon.shell-format"
+    },
+    "[dotenv]": {
+        "editor.defaultFormatter": "foxundermoon.shell-format"
     }
 }
