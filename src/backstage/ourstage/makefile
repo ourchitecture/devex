@@ -44,6 +44,11 @@ format: init
 dev: init
 	@yarn dev
 
+.PHONY: upgrade
+upgrade: init
+	@yarn backstage-cli versions:bump --release next
+	@yarn upgrade
+
 .PHONY: clean
 clean:
 	@yarn clean

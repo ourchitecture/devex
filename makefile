@@ -15,7 +15,7 @@ init:
 # "check" is a standard make target
 .PHONY: check
 check:
-	@pnpm check
+	@pnpm test
 	@cd ./src/backstage/ourstage/ && "$(MAKE)" $@
 
 .PHONY: test

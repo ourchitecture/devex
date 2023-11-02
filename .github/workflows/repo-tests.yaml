@@ -49,8 +49,8 @@ jobs:
               id: install-dependencies
               run: pnpm install --recursive --frozen-lockfile
 
-            - name: Run checks
-              run: pnpm check
+            - name: Run tests
+              run: pnpm test
 
             - name: upload-task-output
               if: always()

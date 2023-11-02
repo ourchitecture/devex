@@ -1,7 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-pnpm check:formatting:changes
+pnpm test:formatting:changes
 
 # leave a little room before git messages
 echo ''

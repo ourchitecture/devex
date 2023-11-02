@@ -248,6 +248,4 @@ const main = async (scriptFilePath) => {
     log.info('Successfully checked versions.')
 }
 
-;(async () => {
-    await main(__filename)
-})()
+main(__filename).then({})

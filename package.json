@@ -14,21 +14,21 @@
     "engineStrict": true,
     "packageManager": "pnpm@8.10.0",
     "scripts": {
-        "check": "wireit",
-        "check:formatting": "wireit",
-        "check:formatting:changes": "lint-staged",
-        "check:versions": "wireit",
         "format": "prettier --write --config ./.prettierrc.yaml --ignore-path ./.gitignore --ignore-path ./.prettierignore ./",
-        "prepare": "husky install"
+        "prepare": "husky install",
+        "test": "wireit",
+        "test:formatting": "wireit",
+        "test:formatting:changes": "lint-staged",
+        "test:versions": "wireit"
     },
     "wireit": {
-        "check": {
+        "test": {
             "dependencies": [
-                "check:formatting",
-                "check:versions"
+                "test:versions",
+                "test:formatting"
             ]
         },
-        "check:formatting": {
+        "test:formatting": {
             "command": "node ./src/tasks/node/check/formatting.js",
             "files": [
                 "./**/*",
@@ -40,7 +40,7 @@
                 "./.task-output/src/tasks/node/check/formatting.js/**"
             ]
         },
-        "check:versions": {
+        "test:versions": {
             "command": "node ./src/tasks/node/check/versions.js",
             "files": [
                 "./**/package.json",
