@@ -1,9 +1,14 @@
 # extends ".gitignore"
 
-**/.husky/
-**/pnpm-lock.yaml
-
-backstage
+# directory names
 dist
 dist-types
 coverage
+
+# absolute directory paths
+/.husky/
+/docs/
+/src/backstage/
+
+# wildcard file names
+**/pnpm-lock.yaml

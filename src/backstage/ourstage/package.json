@@ -15,7 +15,7 @@
     "start:backend": "yarn workspace @ourchitecture/ourstage-backend start",
     "start:techdocs": "techdocs-cli serve --no-docker",
     "start:techdocs:mkdocs": "techdocs-cli serve:mkdocs --no-docker",
-    "build:techdocs": "techdocs-cli generate --help",
+    "build:techdocs": "techdocs-cli generate --no-docker",
     "build:backend": "yarn workspace @ourchitecture/ourstage-backend build",
     "build:all": "backstage-cli repo build --all",
     "build-image": "yarn workspace @ourchitecture/ourstage-backend build-image",

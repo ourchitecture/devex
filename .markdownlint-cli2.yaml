@@ -4,6 +4,7 @@ ignores:
     - '**/node_modules'
     - '**/playwright-report'
     - './src/backstage/**'
+    - './docs/**'
 
 config:
     MD030:

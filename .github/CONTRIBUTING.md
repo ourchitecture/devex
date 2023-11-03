@@ -24,3 +24,10 @@ Start by reading the project's [history of important decisions](../src/docs/deci
 3. If GNU `make` is installed locally, run the command `make`.
 4. If `make` is not installed, run the command `pnpm install --recursive --frozen-lockfile`
    followed by the command `pnpm test`.
+
+## Things to ignore
+
+Sometimes, open source projects recommend to ignore certain warnings or even
+errors (rather than cleaning them up.)
+
+-   [Backstage and the "CSSOM.parse is not a function" error](https://github.com/backstage/backstage/issues/16388#issuecomment-1505120874)

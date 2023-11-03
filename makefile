@@ -31,6 +31,14 @@ format:
 	@pnpm format
 	@cd ./src/backstage/ourstage/ && "$(MAKE)" $@
 
+.PHONY: techdocs
+techdocs:
+	@cd ./src/backstage/ourstage/ && yarn build:techdocs
+	@rm -rf ./docs/ \
+	&& mkdir ./docs/ \
+	&& mv ./src/backstage/ourstage/site/* ./docs/ \
+	&& rm -rf ./src/backstage/ourstage/site/
+
 .PHONY: dev
 dev:
 	@pnpm check -- --watch
