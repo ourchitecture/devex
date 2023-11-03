@@ -53,8 +53,10 @@ upgrade: init
 clean:
 	@yarn clean
 	@rm --recursive --force \
+		./coverage/ \
 		./dist-types/ \
-		./backend/dist/
+		./packages/app/dist/ \
+		./packages/backend/dist/
 
 .PHONY: reset
 reset: clean
