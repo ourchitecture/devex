@@ -54,6 +54,11 @@ jobs:
                     npm@${{ steps.npm-version.outputs.NPM_VERSION }} \
                     yarn@${{ steps.yarn-version.outputs.YARN_VERSION }}
 
+            - uses: actions/setup-python@v4
+              with:
+                  python-version: '3.9'
+                  cache: 'pip' # caching pip dependencies
+
             - name: Make
               id: make
               working-directory: ./src/backstage/ourstage/
