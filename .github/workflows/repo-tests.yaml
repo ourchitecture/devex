@@ -23,6 +23,11 @@ jobs:
         steps:
             - uses: actions/checkout@v3
 
+            - name: Get npm version
+              id: npm-version
+              shell: bash
+              run: echo "NPM_VERSION=$(cat ./.npmrc)" >> $GITHUB_OUTPUT
+
             - name: Get pnpm version
               id: pnpm-version
               shell: bash
@@ -40,6 +45,10 @@ jobs:
                   node-version-file: './.nvmrc'
                   cache: 'pnpm'
                   cache-dependency-path: '**/pnpm-lock.yaml'
+
+            - name: Install npm
+              id: npm-install
+              run: npm install --location=global npm@${{ steps.npm-version.outputs.NPM_VERSION }}
 
             - name: Setup Wireit cache
               id: cache-wireit

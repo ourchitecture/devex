@@ -58,3 +58,8 @@ reset: clean
 sync:
 	@git-town sync
 	@gh run watch
+
+.PHONY: workflows
+workflows:
+	@gh workflow view repo-tests
+	@gh workflow view ourstage-tests

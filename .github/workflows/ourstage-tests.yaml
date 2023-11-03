@@ -29,12 +29,30 @@ jobs:
         steps:
             - uses: actions/checkout@v3
 
+            - name: Get npm version
+              id: npm-version
+              shell: bash
+              run: echo "NPM_VERSION=$(cat ./.npmrc)" >> $GITHUB_OUTPUT
+
+            - name: Get yarn version
+              id: yarn-version
+              shell: bash
+              working-directory: ./src/backstage/ourstage/
+              run: cat ./package.json | jq -r .packageManager | sed 's\yarn@\\g' | xargs -I {} -n 1 echo 'YARN_VERSION={}' >> $GITHUB_OUTPUT
+
             - uses: actions/setup-node@v3
               id: node-install
               with:
                   node-version-file: './.nvmrc'
                   cache: 'yarn'
                   cache-dependency-path: './src/backstage/ourstage/**/yarn.lock'
+
+            - name: Install npm and yarn
+              id: npm-and-yarn-install
+              run: |
+                  npm install --location=global \
+                    npm@${{ steps.npm-version.outputs.NPM_VERSION }} \
+                    yarn@${{ steps.yarn-version.outputs.YARN_VERSION }}
 
             - name: Make
               id: make
