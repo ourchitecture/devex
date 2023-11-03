@@ -58,6 +58,7 @@ jobs:
               with:
                   python-version-file: '.python-version'
                   cache: 'pip' # caching pip dependencies
+                  cache-dependency-path: '**/python-requirements.txt'
 
             - name: Make
               id: make
