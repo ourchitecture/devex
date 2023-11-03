@@ -13,6 +13,7 @@ init:
 	@yarn install \
 		--frozen-lockfile \
 		--ignore-engines
+	@pip install --requirement ./python-requirements.txt
 
 .PHONY: info
 info:

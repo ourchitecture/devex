@@ -1,3 +1,6 @@
+// TODO: check for python and pip versions
+// TODO: optionally output pnpm, yarn, and python (requirements.txt) dependency available upgrades
+
 import { URL } from 'url'
 
 import Box from 'cli-box'

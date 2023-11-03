@@ -1,0 +1,6 @@
+site_name: Ourstage
+docs_dir: ./techdocs/
+nav:
+  - Home: ./README.md
+plugins:
+  - techdocs-core

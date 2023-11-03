@@ -1,0 +1,19 @@
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: ericis
+spec:
+  profile:
+    displayName: Eric Swanson
+    picture: https://avatars.githubusercontent.com/u/974919?s=96&v=4
+  memberOf: [ourchitecture-maintainers]
+---
+apiVersion: backstage.io/v1alpha1
+kind: User
+metadata:
+  name: ourchitectureio
+spec:
+  profile:
+    displayName: Ourchitecture.io
+    picture: https://avatars.githubusercontent.com/u/97544811?s=96&v=4
+  memberOf: [ourchitecture-maintainers]

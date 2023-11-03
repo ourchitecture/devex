@@ -1,0 +1,12 @@
+apiVersion: backstage.io/v1alpha1
+kind: Group
+metadata:
+  name: ourchitecture-maintainers
+  description: Ourchitecture project maintainers.
+spec:
+  type: team
+  profile:
+    displayName: Ourchitecture Maintainers
+    picture: https://avatars.githubusercontent.com/u/97544811?s=96&v=4
+  children: []
+  members: []

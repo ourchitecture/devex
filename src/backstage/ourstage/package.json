@@ -10,9 +10,12 @@
   "engineStrict": true,
   "packageManager": "yarn@1.22.19",
   "scripts": {
-    "dev": "concurrently \"yarn start-backend\" \"yarn start\"",
+    "dev": "concurrently \"yarn start:backend\" \"yarn start\"",
     "start": "yarn workspace @ourchitecture/ourstage-app start",
-    "start-backend": "yarn workspace @ourchitecture/ourstage-backend start",
+    "start:backend": "yarn workspace @ourchitecture/ourstage-backend start",
+    "start:techdocs": "techdocs-cli serve --no-docker",
+    "start:techdocs:mkdocs": "techdocs-cli serve:mkdocs --no-docker",
+    "build:techdocs": "techdocs-cli generate --help",
     "build:backend": "yarn workspace @ourchitecture/ourstage-backend build",
     "build:all": "backstage-cli repo build --all",
     "build-image": "yarn workspace @ourchitecture/ourstage-backend build-image",
@@ -36,6 +39,7 @@
   "devDependencies": {
     "@backstage/cli": "^0.23.1",
     "@spotify/prettier-config": "^12.0.0",
+    "@techdocs/cli": "^1.6.0",
     "concurrently": "^8.0.0",
     "lerna": "^4.0.0",
     "node-gyp": "^9.0.0",
