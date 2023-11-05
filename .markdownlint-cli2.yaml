@@ -1,10 +1,18 @@
 globs:
     - '**/*.md'
 ignores:
+    # any directory that matches
+    - '**/.task-ouput'
+    - '**/.wireit'
     - '**/node_modules'
     - '**/playwright-report'
-    - './src/backstage/**'
+
+    # entire sub-directories
+    - './.github/**'
+    - './.husky/**'
+    - './.vscode/**'
     - './docs/**'
+    - './src/backstage/**'
 
 config:
     MD030:
