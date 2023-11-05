@@ -10,6 +10,8 @@ Start by reading the project's [history of important decisions](../src/docs/deci
 
 -   [NodeJS](https://nodejs.org/)
 -   [`pnpm`](https://pnpm.io/)
+-   [`yarn`](https://yarnpkg.com/) _\*Used by Backstage project._
+-   [`python`](https://www.python.org/downloads/) _\*Used by Backstage project._
 -   Optionally install [GNU `make`](https://www.gnu.org/software/make/). Linux
     and macOS developers may already have this program installed. Windows users
     may use [Git BASH](https://gitforwindows.org/) along with a

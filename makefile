@@ -21,23 +21,26 @@ check:
 .PHONY: test
 test: check
 
-# "install" is a standard make target
-.PHONY: install
-install:
-	@cd ./src/backstage/ourstage/ && "$(MAKE)" $@
-
 .PHONY: format
 format:
 	@pnpm format
 	@cd ./src/backstage/ourstage/ && "$(MAKE)" $@
 
-.PHONY: techdocs
-techdocs:
+.PHONY: install-ourstage
+install-ourstage:
+	@cd ./src/backstage/ourstage/ && "$(MAKE)" install
+
+.PHONY: install-techdocs
+install-techdocs:
 	@cd ./src/backstage/ourstage/ && yarn build:techdocs
 	@rm -rf ./docs/ \
 	&& mkdir ./docs/ \
 	&& mv ./src/backstage/ourstage/site/* ./docs/ \
 	&& rm -rf ./src/backstage/ourstage/site/
+
+# "install" is a standard make target
+.PHONY: install
+install: install-ourstage install-techdocs
 
 .PHONY: dev
 dev:
