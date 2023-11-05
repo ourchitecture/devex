@@ -34,7 +34,11 @@
                 "./**/*",
                 "!.husky",
                 "!.task-output",
-                "!pnpm-lock.yaml"
+                "!.wireit",
+                "!node_modules",
+                "!pnpm-lock.yaml",
+                "!./docs",
+                "!./src/backstage"
             ],
             "output": [
                 "./.task-output/src/tasks/node/check/formatting.js/**"

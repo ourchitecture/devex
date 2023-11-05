@@ -8,7 +8,6 @@ ignores:
     - '**/playwright-report'
 
     # entire sub-directories
-    - './.github/**'
     - './.husky/**'
     - './.vscode/**'
     - './docs/**'
