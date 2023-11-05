@@ -61,7 +61,7 @@ jobs:
                   cache-dependency-path: '**/python-requirements.txt'
 
             - name: Make init
-              id: make-ourstage
+              id: make-init
               run: make init-ourstage
 
             - name: Make Ourstage
