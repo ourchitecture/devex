@@ -49,7 +49,7 @@ jobs:
               id: node-install
               with:
                   node-version-file: './.nvmrc'
-                  cache: 'pnpm'
+                  cache: 'pnpm' # caching pnpm dependencies
                   cache-dependency-path: '**/pnpm-lock.yaml'
 
             - name: Install npm and yarn

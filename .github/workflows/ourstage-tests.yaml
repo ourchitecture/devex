@@ -44,7 +44,7 @@ jobs:
               id: node-install
               with:
                   node-version-file: './.nvmrc'
-                  cache: 'yarn'
+                  cache: 'yarn' # caching yarn dependencies
                   cache-dependency-path: './src/backstage/ourstage/**/yarn.lock'
 
             - name: Install npm and yarn
@@ -60,7 +60,10 @@ jobs:
                   cache: 'pip' # caching pip dependencies
                   cache-dependency-path: '**/python-requirements.txt'
 
-            - name: Make
+            - name: Make Ourstage
               id: make
-              working-directory: ./src/backstage/ourstage/
-              run: make
+              run: make install-ourstage
+
+            - name: Make TechDocs
+              id: make
+              run: make install-techdocs
