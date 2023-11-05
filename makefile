@@ -7,10 +7,16 @@
 # "all" is a standard make target
 all: init check install
 
-.PHONY: init
-init:
+.PHONY: init-repo
+init-repo:
 	@pnpm install --recursive --frozen-lockfile
+
+.PHONY: init-ourstage
+init-ourstage:
 	@cd ./src/backstage/ourstage/ && "$(MAKE)" $@
+
+.PHONY: init
+init: init-repo init-ourstage
 
 # "check" is a standard make target
 .PHONY: check

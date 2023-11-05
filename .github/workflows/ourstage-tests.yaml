@@ -60,6 +60,10 @@ jobs:
                   cache: 'pip' # caching pip dependencies
                   cache-dependency-path: '**/python-requirements.txt'
 
+            - name: Make init
+              id: make-ourstage
+              run: make init-ourstage
+
             - name: Make Ourstage
               id: make-ourstage
               run: make install-ourstage
