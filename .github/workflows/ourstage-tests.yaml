@@ -61,9 +61,9 @@ jobs:
                   cache-dependency-path: '**/python-requirements.txt'
 
             - name: Make Ourstage
-              id: make
+              id: make-ourstage
               run: make install-ourstage
 
             - name: Make TechDocs
-              id: make
+              id: make-techdocs
               run: make install-techdocs
