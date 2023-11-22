@@ -14,7 +14,7 @@ metadata:
     name: ourstage
     description: A development experience portal.
     annotations:
-      github.com/project-slug: backstage/backstage
+      github.com/project-slug: ourchitecture/devex
       backstage.io/techdocs-ref: dir:./
 spec:
     type: website

@@ -1,0 +1,23 @@
+FROM docker.io/library/node:20.9-bookworm as base
+
+ARG NPM_REGISTRY_URL=http://localhost:8081/repository/npm-all/
+
+USER root
+
+RUN mkdir -p /usr/local/src/ourstage/
+
+WORKDIR /usr/local/src/ourstage/
+
+FROM base as dependencies
+
+RUN mkdir -p /usr/local/src/ourstage/dependencies/ \
+  && mkdir -p /usr/local/src/ourstage/dependencies/packages/app/ \
+  && mkdir -p /usr/local/src/ourstage/dependencies/packages/backend/
+
+WORKDIR /usr/local/src/ourstage/dependencies/
+
+COPY ./package.json ./yarn.lock /usr/local/src/ourstage/dependencies/
+COPY ./packages/app/package.json /usr/local/src/ourstage/dependencies/packages/app/
+COPY ./packages/app/package.json /usr/local/src/ourstage/dependencies/packages/app/
+
+RUN yarn install --frozen-lockfile --registry $NPM_REGISTRY_URL

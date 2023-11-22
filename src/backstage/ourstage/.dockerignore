@@ -1,8 +1,12 @@
 .git
 .yarn/cache
 .yarn/install-state.gz
+coverage
+dist-types
 node_modules
 packages/*/src
 packages/*/node_modules
 plugins
 *.local.yaml
+makefile
+Containerfile

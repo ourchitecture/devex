@@ -62,21 +62,21 @@
         }
     },
     "devDependencies": {
-        "@commitlint/cli": "^17.7.2",
-        "@commitlint/config-conventional": "^17.7.0",
+        "@commitlint/cli": "^18.4.2",
+        "@commitlint/config-conventional": "^18.4.2",
         "chalk": "^5.3.0",
         "cli-box": "^6.0.10",
         "dotenv": "^16.3.1",
         "glob": "^10.3.10",
         "husky": "^8.0.3",
         "latest-version": "^7.0.0",
-        "lint-staged": "^14.0.1",
+        "lint-staged": "^15.1.0",
         "markdownlint-cli2": "^0.10.0",
-        "prettier": "^3.0.3",
+        "prettier": "^3.1.0",
         "semver": "^7.5.4",
         "which": "^4.0.0",
         "winston": "^3.11.0",
-        "wireit": "^0.14.0"
+        "wireit": "^0.14.1"
     },
     "resolutions": {
         "@types/react": "^17",
