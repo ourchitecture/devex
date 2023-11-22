@@ -4,11 +4,11 @@
   "private": true,
   "engines": {
     "node": ">=20.9.0",
-    "npm": ">=10.2.3",
-    "yarn": ">=1.22.19"
+    "npm": ">=10.2.4",
+    "yarn": ">=1.22.21"
   },
   "engineStrict": true,
-  "packageManager": "yarn@1.22.19",
+  "packageManager": "yarn@1.22.21",
   "scripts": {
     "dev": "concurrently \"yarn start:backend\" \"yarn start\"",
     "start": "yarn workspace @ourchitecture/ourstage-app start",
