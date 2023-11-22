@@ -9,10 +9,10 @@
     "engines": {
         "node": ">=20.9.0",
         "npm": ">=10.2.4",
-        "pnpm": ">=8.10.2"
+        "pnpm": ">=8.10.5"
     },
     "engineStrict": true,
-    "packageManager": "pnpm@8.10.2",
+    "packageManager": "pnpm@8.10.5",
     "scripts": {
         "format": "prettier --write --config ./.prettierrc.yaml --ignore-path ./.gitignore --ignore-path ./.prettierignore ./",
         "prepare": "husky install",
