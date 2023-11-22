@@ -27,8 +27,8 @@ export const log = (level, message, metadata) => {
         ? metadata.length === 0
             ? {}
             : metadata.length === 1
-            ? metadata[0]
-            : { argv: metadata }
+              ? metadata[0]
+              : { argv: metadata }
         : metadata
 
     const cleanMessage = message.replace(escapeAnsiRegex, '')
