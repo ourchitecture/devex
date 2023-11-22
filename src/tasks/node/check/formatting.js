@@ -107,6 +107,50 @@ const main = async (scriptFilePath) => {
 
     await checkFormattingWithMarkdownlint(scriptFilePath)
 
+    const ourStageYarnLockFilePath = host.getRelativeToRootPath(
+        './src/backstage/ourstage/yarn.lock'
+    )
+
+    const ourStageYarnLockFileContent = await host.readFile(
+        ourStageYarnLockFilePath
+    )
+
+    const localhostNexusNpmRegistryUrl =
+        'http://localhost:8081/repository/npm-all/'
+
+    const ourStageYarnLockFileContainsLocalhostRegistryReference =
+        ourStageYarnLockFileContent.indexOf(localhostNexusNpmRegistryUrl) >= 0
+
+    log.debug('Checking the yarn lock file for localhost registry usage...', {
+        ourStageYarnLockFilePath,
+        ourStageYarnLockFileContainsLocalhostRegistryReference,
+        localhostNexusNpmRegistryUrl,
+    })
+
+    if (ourStageYarnLockFileContainsLocalhostRegistryReference) {
+        log.warn(
+            'The Ourstage yarn lockfile contains references to a localhost Nexus NPM registry URL that need to be replaced with the Yarn registry URL.'
+        )
+
+        const yarnRegistryUrl = 'https://registry.yarnpkg.com/'
+
+        const cleanOurStageYarnLockFileContent =
+            ourStageYarnLockFileContent.replaceAll(
+                localhostNexusNpmRegistryUrl,
+                yarnRegistryUrl
+            )
+
+        await host.writeFile(
+            ourStageYarnLockFilePath,
+            cleanOurStageYarnLockFileContent,
+            { cleanAnsiCharacters: false }
+        )
+
+        log.info(
+            'The Ourstage "yarn.lock" file has been updated with the Yarn registry URL. Commit the changed files and try again.'
+        )
+    }
+
     log.info('Successfully checked formatting.')
 }
 
