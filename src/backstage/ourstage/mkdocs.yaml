@@ -1,5 +1,5 @@
 site_name: Ourstage
-docs_dir: ./techdocs/
+docs_dir: ./docs/
 nav:
   - Home: ./README.md
 plugins:
